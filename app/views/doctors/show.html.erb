@@ -1,0 +1,8 @@
+<h1><%= @doctor.name %></h1>
+
+Doctor patients:
+
+<% @doctor.patients.uniq.each do |patient|%>
+<%= link_to patient.name, patient%>
+<br>
+<% end %>

@@ -1,0 +1,26 @@
+<h1>Appointment Form</h1>
+
+<%= form_for @appointment do |form|%>
+
+<%= form.label :date%>
+     <%= form.date_field :date%>
+<br>
+<br>
+    <%= form.label :notes%>
+    <%= form.text_field :notes%>
+ <br>
+<br>   
+
+<%= form.label "Please choose your doctor" %>
+    <%= form.collection_select :doctor_id, @all_doctors, :id, :name, prompt: true %>
+
+ <br>
+<br> 
+<%= form.label "Please choose your patient" %>
+    <%= form.collection_select :patient_id, @all_patients, :id, :name, prompt: true %>
+ <br>
+<br> 
+
+
+<%= form.submit%>
+<% end %>

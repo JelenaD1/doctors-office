@@ -1,0 +1,18 @@
+<h1><%= @patient.name%></h1>
+
+
+<% @patient.doctors.uniq.each do |doctor|%>
+<p>
+<%= link_to doctor.name, doctor%>
+<% doctor.appointments.each do |appt|%>
+<%= appt.date%>
+<%= appt.patient.name%>
+</p>
+
+<br>
+<br>
+
+ <% end %>
+
+<% end %>
+
