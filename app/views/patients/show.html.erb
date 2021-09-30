@@ -4,9 +4,9 @@
 <% @patient.doctors.uniq.each do |doctor|%>
 <p>
 <%= link_to doctor.name, doctor%>
-<% doctor.appointments.each do |appt|%>
+<% doctor.appointments.where(patient_id: @patient.id).each do |appt|%>
 <%= appt.date%>
-<%= appt.patient.name%>
+<%= appt.notes%>
 </p>
 
 <br>
